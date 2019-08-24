@@ -1,6 +1,5 @@
 #![feature(crate_visibility_modifier)]
 #![feature(in_band_lifetimes)]
-#![feature(async_await)]
 #![feature(try_trait)]
 #![feature(bind_by_move_pattern_guards)]
 
@@ -10,7 +9,7 @@ use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let matches = App::new("nushell")
-        .version("0.1.3")
+        .version(clap::crate_version!())
         .arg(
             Arg::with_name("loglevel")
                 .short("l")
